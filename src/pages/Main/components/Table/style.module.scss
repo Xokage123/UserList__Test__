@@ -1,11 +1,13 @@
 @import '../../../../style/scss/variables';
 
 .Table {
+  margin-bottom: 20px;
+  border-bottom: 2px solid black;
+
   &_Container {
     border-spacing: 0;
     width: 100%;
     table-layout: fixed;
-    margin-bottom: 20px;
   }
 
   &_Header {
@@ -93,6 +95,7 @@
 
     &_Text {
       font-size: 14px;
+
       &Special {
         font-size: 16px;
       }
@@ -115,6 +118,7 @@
 
     &_Text {
       font-size: 12px;
+
       &Special {
         font-size: 14px;
       }

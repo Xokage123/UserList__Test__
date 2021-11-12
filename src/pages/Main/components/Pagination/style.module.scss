@@ -39,3 +39,16 @@
     border-radius: 0;
   }
 }
+
+@media all and (max-width: 768px) {
+  
+  .Pagination {
+    flex-direction: column;
+      &_Box {
+        padding: 5px;
+      }
+      &_NumberPage {
+         padding: 5px 20px;
+      }
+  }
+}
