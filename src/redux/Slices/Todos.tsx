@@ -1,12 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
+import type { IInitialProps, ITodoProps} from '../../ITE/interface/todo'
+
 import { getListTodo } from '../../api/todos'
 
-interface IInitialProps {
-  listTodos: Array<any>
-}
 
-const initialState: IInitialProps = {
+export const initialState: IInitialProps = {
   listTodos: []
 }
 
@@ -14,7 +13,7 @@ export const fetchGetTodos = createAsyncThunk(
   'todos/fetchGetTodos',
   async (_, thunkAPI) => {
     try {
-      const list: Array<any> = await getListTodo()
+      const list: Array<ITodoProps> = await getListTodo()
       return list
     } catch (er) {
       thunkAPI.rejectWithValue(er)

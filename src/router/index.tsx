@@ -1,10 +1,13 @@
 import { FC, useEffect } from "react";
-import { Routes, Route, useRoutes, useNavigate, generatePath } from "react-router-dom";
+import { useRoutes, useNavigate, generatePath } from "react-router-dom";
 
 // Pages
 import MainPage from '../pages/Main';
+import TodoPage from '../pages/Todo'
 
 export const PATH_LIST = '/page/:numberPage';
+
+export const PATH_TODO = '/todo/:id';
 
 
 const RouterApp: FC = () => {
@@ -16,6 +19,9 @@ const RouterApp: FC = () => {
     {
       path: PATH_LIST,
       element: <MainPage />
+    },{
+      path: PATH_TODO,
+      element: <TodoPage />
     }
   ])
   return element
