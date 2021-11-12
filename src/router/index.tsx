@@ -1,35 +1,36 @@
-import { FC } from "react";
-import { Routes, Route, useRoutes } from "react-router-dom";
+import { FC, useEffect } from "react";
+import { Routes, Route, useRoutes, useNavigate, generatePath } from "react-router-dom";
 
 // Pages
 import MainPage from '../pages/Main';
 
-interface IRoutesArray {
-  path: string;
-  exact: boolean
-  Element: FC
-}
-
-export const RoutesArray: Array<IRoutesArray> = [
-  {
-    path: '',
-    exact: true,
-    Element: MainPage
-  }
-]
+export const PATH_LIST = '/page/:numberPage';
 
 
 const RouterApp: FC = () => {
-  return <Routes>
+  const element = useRoutes([
     {
-      RoutesArray.map(route => {
-        const { path, Element } = route
-        return (
-          <Route path={path} element={<Element />} key={path}></Route>
-        )
-      })
+      path: '/',
+      element: <StartPage/>
+    },
+    {
+      path: PATH_LIST,
+      element: <MainPage />
     }
-  </Routes>
+  ])
+  return element
+}
+
+const StartPage: FC = () => {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    navigate(generatePath(PATH_LIST, {
+      numberPage: '1'
+    }))
+  })
+
+  return <div>Подождите, информация загружается...</div>
 }
 
 export default RouterApp

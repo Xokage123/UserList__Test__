@@ -5,6 +5,9 @@ import { BrowserRouter } from "react-router-dom";
 import storeApp from './redux/srote';
 import reportWebVitals from './reportWebVitals';
 
+import './style/css/normalize.css'
+import './style/scss/globals.scss'
+
 import App from './App';
 
 const ID_APP = 'root';
