@@ -1,6 +1,6 @@
 import { FC, useEffect } from "react";
 // Redux
-import { useAppDispatch, useAppSelector } from './redux/srote'
+import { useAppDispatch } from './redux/srote'
 import { fetchGetTodos } from "./redux/Slices/Todos";
 
 import RouterApp from './router'

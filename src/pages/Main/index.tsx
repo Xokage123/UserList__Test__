@@ -6,8 +6,6 @@ import { useParams } from 'react-router';
 import { TableComponent } from './components/Table';
 import { PaginationComponent } from './components/Pagination';
 
-import Styles from './style.module.scss';
-
 import Box from '@mui/material/Box';
 
 const INITIAL_VALUE = 25
